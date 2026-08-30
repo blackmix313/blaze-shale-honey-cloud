@@ -1,0 +1,38 @@
+{
+  "url": "http://127.0.0.1:8081/",
+  "viewports": {
+    "desktop": {
+      "width": 1280,
+      "height": 800,
+      "status": 200,
+      "title": "Aether VPN",
+      "hasCanvas": false,
+      "bodyTextLen": 843,
+      "bodyTextHash": "ae14088f11ddac2d469a3d345b35d7d6e50819d442ac4b36b5007356ec0d6853",
+      "bodyTextPrefix": "AETHER v1.8.0 Aether core STANDBY SOUL Windows core Tray TP · TH",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built.png"
+    },
+    "mobile": {
+      "width": 390,
+      "height": 844,
+      "status": 200,
+      "title": "Aether VPN",
+      "hasCanvas": false,
+      "bodyTextLen": 749,
+      "bodyTextHash": "9a141902b0fa612fcf0baad41c9f41a79419702e3968650045997d91f06ed2a2",
+      "bodyTextPrefix": "AETHER v1.8.0 STANDBY TP · THROUGHPUT 0% Up 00:00:00 Jitter 0ms ",
+      "horizontalOverflow": false,
+      "consoleErrors": [],
+      "pageErrors": [],
+      "screenshot": "/workspace/screenshots/app-builder-built-mobile.png"
+    }
+  },
+  "brandWarnings": [],
+  "authWarnings": [],
+  "verdictFile": "/workspace/screenshots/app-builder-built.json",
+  "divergesFromBaseline": false,
+  "baselineReasons": []
+}

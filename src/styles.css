@@ -1,0 +1,147 @@
+@import "tailwindcss";
+
+@theme {
+  --color-void: #070814;
+  --color-ink: #0b0e20;
+  --color-panel: #10142e;
+  --color-surface: #151a38;
+  --color-line: #1c244c;
+  --color-line-strong: #2b3566;
+  --color-cyan: #00e5ff;
+  --color-magenta: #ff2d7b;
+  --color-soul-red: #ff2a2a;
+  --color-soul-cyan: #00e5ff;
+  --color-soul-yellow: #ffe600;
+  --color-soul-green: #00ff66;
+  --color-tp: #ff9900;
+  --color-muted: #8a99c9;
+  --color-fg: #e8edff;
+  --color-dim: #5c6b9a;
+  --color-card: #0c1026;
+
+  --font-sans: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-mono: "JetBrains Mono", ui-monospace, "SF Mono", Menlo, Consolas, monospace;
+  --font-pixel: "Press Start 2P", ui-monospace, monospace;
+  --font-vt: "VT323", ui-monospace, monospace;
+
+  --radius-sm: 6px;
+  --radius-md: 10px;
+  --radius-lg: 14px;
+  --radius-xl: 18px;
+
+  --shadow-glow: 0 0 24px color-mix(in oklab, var(--color-cyan) 22%, transparent);
+}
+
+@layer base {
+  html {
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+  }
+
+  html,
+  body,
+  #app {
+    min-height: 100%;
+    background: var(--color-void);
+    color: var(--color-fg);
+  }
+
+  body {
+    font-family: var(--font-sans);
+    letter-spacing: -0.01em;
+  }
+
+  button:not(:disabled),
+  [role="button"]:not(:disabled) {
+    cursor: pointer;
+  }
+
+  h1,
+  h2,
+  h3 {
+    text-wrap: balance;
+  }
+
+  p {
+    text-wrap: pretty;
+  }
+}
+
+.font-pixel {
+  font-family: var(--font-pixel);
+}
+
+.font-vt {
+  font-family: var(--font-vt);
+}
+
+.deltarune-box {
+  border: 3px solid #ffffff;
+  box-shadow: 0 0 0 2px #000000, 0 0 16px color-mix(in oklab, var(--color-cyan) 25%, transparent);
+  background: #000000;
+}
+
+.scanlines {
+  background: repeating-linear-gradient(
+    to bottom,
+    transparent 0 2px,
+    rgb(0 0 0 / 0.18) 2px 3px
+  );
+  pointer-events: none;
+}
+
+@keyframes soulPulse {
+  0%,
+  100% {
+    transform: scale(1);
+    filter: drop-shadow(0 0 8px color-mix(in oklab, var(--soul, #ff2a2a) 80%, transparent));
+  }
+  50% {
+    transform: scale(1.08);
+    filter: drop-shadow(0 0 16px var(--soul, #ff2a2a));
+  }
+}
+
+.animate-soul-pulse {
+  animation: soulPulse 1.4s ease-in-out infinite;
+}
+
+@keyframes spin-slow {
+  to {
+    transform: rotate(360deg);
+  }
+}
+
+.animate-spin-slow {
+  animation: spin-slow 12s linear infinite;
+}
+
+.animate-spin-rev {
+  animation: spin-slow 8s linear infinite reverse;
+}
+
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: #090c1a;
+}
+::-webkit-scrollbar-thumb {
+  background: #252e5a;
+  border-radius: 2px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--color-cyan);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .animate-soul-pulse,
+  .animate-spin-slow,
+  .animate-spin-rev,
+  .animate-pulse,
+  .animate-bounce,
+  .animate-ping {
+    animation: none !important;
+  }
+}
